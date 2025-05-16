@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html,body{
+    width: 100%;
+    size: 100%;
+    font-family: 'Poppins';
+    overflow-x:scroll;
+
+}
+body{
+  background-color: black;
+}
+:root{
+  --color-nonmetal: #2a4165;
+  --color-noble-gas:#623842;
+  --color-alkali-metal:#244d57;
+  --color-alkaline-earth-metal:#622e39;
+  --color-metalloid:#523e1b;
+  --color-halogen:#668fd1;
+  --color-post-transition-metal:#2f4d47;
+  --color-transition-metal:#433c65;
+  --color-lanthanide:#004a77;
+  --color-actinide:#613b28;
+}
+
+
+
+#periodic-table {
+  display: flex;
+  flex-direction: column;
+}
+#upper-elements{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-auto-rows: 80px;
+  gap: 5px;
+}
+#fblock{
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+#fbl{
+  width: 17%;
+
+}
+#fbr{
+  width: 83%;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-auto-rows: 80px;
+  gap: 5px;
+
+}
+
+
+
+.element {
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.71);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.element:hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff;
+  z-index: 10;
+}
+
+
+
+.nonmetal {
+  background-color: var(--color-nonmetal);
+}
+.noble-gas {
+  background-color: var(--color-noble-gas);
+}
+.alkali-metal {
+  background-color: var(--color-alkali-metal);
+}
+.alkaline-earth-metal {
+  background-color: var(--color-alkaline-earth-metal);
+}
+.metalloid {
+  background-color: var(--color-metalloid);
+}
+.halogen {
+  background-color: var(--color-halogen);
+}
+.post-transition-metal {
+  background-color: var(--color-post-transition-metal);
+}
+.transition-metal {
+  background-color: var(--color-transition-metal);
+}
+.lanthanide {
+  background-color: var(--color-lanthanide);
+}
+.actinide {
+  background-color: var(--color-actinide);
+}
+
