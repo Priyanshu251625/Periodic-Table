@@ -1,6 +1,6 @@
 const elements = [
   { number: 1, symbol: "H", name: "Hydrogen", category: "nonmetal", group: 1, period: 1, atomicMass: 1.008, normalState: "💨Gas" },
-  { number: 2, symbol: "He", name: "Helium", category: "noble 💨Gas", group: 18, period: 1, atomicMass: 4.0026, normalState: "💨Gas" },
+  { number: 2, symbol: "He", name: "Helium", category: "noble Gas", group: 18, period: 1, atomicMass: 4.0026, normalState: "💨Gas" },
   { number: 3, symbol: "Li", name: "Lithium", category: "alkali metal", group: 1, period: 2, atomicMass: 6.94, normalState: "🧱Solid" },
   { number: 4, symbol: "Be", name: "Beryllium", category: "alkaline earth metal", group: 2, period: 2, atomicMass: 9.0122, normalState: "🧱Solid" },
   { number: 5, symbol: "B", name: "Boron", category: "metalloid", group: 13, period: 2, atomicMass: 10.81, normalState: "🧱Solid" },
@@ -8,7 +8,7 @@ const elements = [
   { number: 7, symbol: "N", name: "Nitrogen", category: "nonmetal", group: 15, period: 2, atomicMass: 14.007, normalState: "💨Gas" },
   { number: 8, symbol: "O", name: "Oxygen", category: "nonmetal", group: 16, period: 2, atomicMass: 15.999, normalState: "💨Gas" },
   { number: 9, symbol: "F", name: "Fluorine", category: "halogen", group: 17, period: 2, atomicMass: 18.998, normalState: "💨Gas" },
-  { number: 10, symbol: "Ne", name: "Neon", category: "noble 💨Gas", group: 18, period: 2, atomicMass: 20.180, normalState: "💨Gas" },
+  { number: 10, symbol: "Ne", name: "Neon", category: "noble Gas", group: 18, period: 2, atomicMass: 20.180, normalState: "💨Gas" },
   { number: 11, symbol: "Na", name: "Sodium", category: "alkali metal", group: 1, period: 3, atomicMass: 22.990, normalState: "🧱Solid" },
   { number: 12, symbol: "Mg", name: "Magnesium", category: "alkaline earth metal", group: 2, period: 3, atomicMass: 24.305, normalState: "🧱Solid" },
   { number: 13, symbol: "Al", name: "Aluminium", category: "post-transition metal", group: 13, period: 3, atomicMass: 26.982, normalState: "🧱Solid" },
@@ -16,7 +16,7 @@ const elements = [
   { number: 15, symbol: "P", name: "Phosphorus", category: "nonmetal", group: 15, period: 3, atomicMass: 30.974, normalState: "🧱Solid" },
   { number: 16, symbol: "S", name: "Sulfur", category: "nonmetal", group: 16, period: 3, atomicMass: 32.06, normalState: "🧱Solid" },
   { number: 17, symbol: "Cl", name: "Chlorine", category: "halogen", group: 17, period: 3, atomicMass: 35.45, normalState: "💨Gas" },
-  { number: 18, symbol: "Ar", name: "Argon", category: "noble 💨Gas", group: 18, period: 3, atomicMass: 39.948, normalState: "💨Gas" },
+  { number: 18, symbol: "Ar", name: "Argon", category: "noble Gas", group: 18, period: 3, atomicMass: 39.948, normalState: "💨Gas" },
   { number: 19, symbol: "K", name: "Potassium", category: "alkali metal", group: 1, period: 4, atomicMass: 39.098, normalState: "🧱Solid" },
   { number: 20, symbol: "Ca", name: "Calcium", category: "alkaline earth metal", group: 2, period: 4, atomicMass: 40.078, normalState: "🧱Solid" },
   { number: 21, symbol: "Sc", name: "Scandium", category: "transition metal", group: 3, period: 4, atomicMass: 44.956, normalState: "🧱Solid" },
@@ -34,7 +34,7 @@ const elements = [
   { number: 33, symbol: "As", name: "Arsenic", category: "metalloid", group: 15, period: 4, atomicMass: 74.922, normalState: "🧱Solid" },
   { number: 34, symbol: "Se", name: "Selenium", category: "polyatomic nonmetal", group: 16, period: 4, atomicMass: 78.971, normalState: "🧱Solid" },
   { number: 35, symbol: "Br", name: "Bromine", category: "halogen", group: 17, period: 4, atomicMass: 79.904, normalState: "💧Liquid" },
-  { number: 36, symbol: "Kr", name: "Krypton", category: "noble 💨Gas", group: 18, period: 4, atomicMass: 83.798, normalState: "💨Gas" },
+  { number: 36, symbol: "Kr", name: "Krypton", category: "noble Gas", group: 18, period: 4, atomicMass: 83.798, normalState: "💨Gas" },
   { number: 37, symbol: "Rb", name: "Rubidium", category: "alkali metal", group: 1, period: 5, atomicMass: 85.468, normalState: "🧱Solid" },
   { number: 38, symbol: "Sr", name: "Strontium", category: "alkaline earth metal", group: 2, period: 5, atomicMass: 87.62, normalState: "🧱Solid" },
   { number: 39, symbol: "Y", name: "Yttrium", category: "transition metal", group: 3, period: 5, atomicMass: 88.906, normalState: "🧱Solid" },
@@ -52,7 +52,7 @@ const elements = [
   { number: 51, symbol: "Sb", name: "Antimony", category: "metalloid", group: 15, period: 5, atomicMass: 121.76, normalState: "🧱Solid" },
   { number: 52, symbol: "Te", name: "Tellurium", category: "metalloid", group: 16, period: 5, atomicMass: 127.60, normalState: "🧱Solid" },
   { number: 53, symbol: "I", name: "Iodine", category: "halogen", group: 17, period: 5, atomicMass: 126.90, normalState: "🧱Solid" },
-  { number: 54, symbol: "Xe", name: "Xenon", category: "noble 💨Gas", group: 18, period: 5, atomicMass: 131.29, normalState: "💨Gas" },
+  { number: 54, symbol: "Xe", name: "Xenon", category: "noble Gas", group: 18, period: 5, atomicMass: 131.29, normalState: "💨Gas" },
   { number: 55, symbol: "Cs", name: "Cesium", category: "alkali metal", group: 1, period: 6, atomicMass: 132.91, normalState: "🧱Solid" },
   { number: 56, symbol: "Ba", name: "Barium", category: "alkaline earth metal", group: 2, period: 6, atomicMass: 137.33, normalState: "🧱Solid" },
   { number: 57, symbol: "La", name: "Lanthanum", category: "lanthanide", group: 3, period: 6, atomicMass: 138.91, normalState: "🧱Solid" },
@@ -84,7 +84,7 @@ const elements = [
   { number: 83, symbol: "Bi", name: "Bismuth", category: "post-transition metal", group: 15, period: 6, atomicMass: 208.98, normalState: "🧱Solid" },
   { number: 84, symbol: "Po", name: "Polonium", category: "post-transition metal", group: 16, period: 6, atomicMass: 209, normalState: "🧱Solid" },
   { number: 85, symbol: "At", name: "Astatine", category: "metalloid", group: 17, period: 6, atomicMass: 210, normalState: "🧱Solid" },
-  { number: 86, symbol: "Rn", name: "Radon", category: "noble 💨Gas", group: 18, period: 6, atomicMass: 222, normalState: "💨Gas" },
+  { number: 86, symbol: "Rn", name: "Radon", category: "noble Gas", group: 18, period: 6, atomicMass: 222, normalState: "💨Gas" },
   { number: 87, symbol: "Fr", name: "Francium", category: "alkali metal", group: 1, period: 7, atomicMass: 223, normalState: "🧱Solid" },
   { number: 88, symbol: "Ra", name: "Radium", category: "alkaline earth metal", group: 2, period: 7, atomicMass: 226, normalState: "🧱Solid" },
   { number: 89, symbol: "Ac", name: "Actinium", category: "actinide", group: 3, period: 7, atomicMass: 227, normalState: "🧱Solid" },
@@ -116,6 +116,6 @@ const elements = [
   { number: 115, symbol: "Mc", name: "Moscovium", category: "unknown, probably post-transition metal", group: 15, period: 7, atomicMass: 290, normalState: "unknown" },
   { number: 116, symbol: "Lv", name: "Livermorium", category: "unknown, probably post-transition metal", group: 16, period: 7, atomicMass: 293, normalState: "unknown" },
   { number: 117, symbol: "Ts", name: "Tennessine", category: "unknown, probably metalloid", group: 17, period: 7, atomicMass: 294, normalState: "unknown" },
-  { number: 118, symbol: "Og", name: "Oganesson", category: "noble 💨Gas", group: 18, period: 7, atomicMass: 294, normalState: "unknown" }
+  { number: 118, symbol: "Og", name: "Oganesson", category: "noble Gas", group: 18, period: 7, atomicMass: 294, normalState: "unknown" }
 ];
 export{ elements }
