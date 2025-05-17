@@ -1,37 +1,58 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html,body{
-    width: 100%;
-    size: 100%;
-    font-family: 'Poppins';
-    overflow-x:scroll;
-
+html,
+body {
+  width: 100%;
+  /* size: 100%; */
+  font-family: "Poppins";
+  /* overflow-x:scroll; */
+  min-height: 100vh;
 }
-body{
+body {
   background-color: black;
 }
-:root{
-  --color-nonmetal: #2a4165;
-  --color-noble-gas:#623842;
-  --color-alkali-metal:#244d57;
-  --color-alkaline-earth-metal:#622e39;
-  --color-metalloid:#523e1b;
-  --color-halogen:#668fd1;
-  --color-post-transition-metal:#2f4d47;
-  --color-transition-metal:#433c65;
-  --color-lanthanide:#004a77;
-  --color-actinide:#613b28;
+:root {
+  --color-nonmetal: #d91a5b;
+  --color-noble-gas: #965ba5;
+  --color-alkali-metal: #f1c41b;
+  --color-alkaline-earth-metal: #e67d26;
+  --color-metalloid: #00a79d;
+  --color-halogen: #51a4cd;
+  --color-post-transition-metal: #2e3e51;
+  --color-transition-metal: #216fa2;
+  --color-lanthanide: #e94c3b;
+  --color-actinide: #55b749;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+}
+#searchnF {
+  width: 100vw; /* OR better: inherit from a scroll-wide parent */
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+#searchInput {
+  height: 30px;
+  padding: 10px;
+}
+#categoryFilter {
+  height: 30px;
 }
 
 #periodic-table {
   display: flex;
   flex-direction: column;
 }
-#upper-elements{
+#upper-elements {
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
@@ -40,35 +61,33 @@ body{
   grid-auto-rows: 80px;
   gap: 5px;
 }
-#fblock{
+#fblock {
   display: flex;
   width: 100%;
   height: auto;
   margin-top: 20px;
 }
-#fbl{
+#fbl {
   width: 17%;
-
 }
-#fbr{
+#fbr {
   width: 83%;
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-auto-rows: 80px;
   gap: 5px;
-
 }
 
 .element {
-  aspect-ratio: 1 / 1; 
+  aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
   padding: 7px;
-  min-width: 80px;  
-  min-height: 80px; 
+  min-width: 80px;
+  min-height: 80px;
 
   font-size: 12px;
   font-weight: bold;
@@ -78,10 +97,17 @@ body{
   text-align: center;
   background-color: gray;
   cursor: pointer;
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 .main-info {
   width: 100%;
@@ -106,7 +132,6 @@ body{
   box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff;
   z-index: 10;
 }
-
 
 .element:hover .main-info {
   transform: scale(0.7) translateX(-30%);
