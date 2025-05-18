@@ -2,6 +2,19 @@ import { elements } from "./elements.js";
 
 const upper = document.getElementById("upper-elements");
 const lower = document.getElementById("fbr");
+const groupNumbers = document.getElementById("group-numbers");
+for (let i = 1; i <= 18; i++) {
+  const group = document.createElement("div");
+  group.textContent = i;
+  groupNumbers.appendChild(group);
+}
+const periodNumbers = document.getElementById("period-numbers");
+for (let i = 1; i <= 7; i++) {
+  const period = document.createElement("div");
+  period.textContent = i;
+  periodNumbers.appendChild(period);
+}
+
 elements.forEach((element) => {
   const baseUrl = "https://en.wikipedia.org/wiki/";
   element.url = baseUrl + element.name;
