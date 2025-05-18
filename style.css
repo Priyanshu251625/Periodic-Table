@@ -27,6 +27,7 @@ body {
   --color-actinide: #55b749;
 }
 #container {
+  /* overflow: auto; */
   display: flex;
   flex-direction: column;
 }
@@ -68,10 +69,10 @@ body {
   margin-top: 20px;
 }
 #fbl {
-  width: 17%;
+  width: 22%;
 }
 #fbr {
-  width: 83%;
+  width: 78%;
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-auto-rows: 80px;
@@ -126,7 +127,12 @@ body {
   transform: translateX(50%);
   transition: all 0.3s ease;
 }
-
+.highlighted {
+  transform: scale(0.9);
+  outline: 4px solid rgba(255, 174, 0, 0.938);
+  background-color: #05116ebb !important;
+  transition: background-color 0.4s, outline 0.4s;
+}
 .element:hover {
   transform: scale(1.5);
   box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff;
