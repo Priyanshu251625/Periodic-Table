@@ -104,16 +104,13 @@ a {
   height: auto;
   margin-top: 20px;
 }
-#fbl {
-  width: 22%;
-}
 #fbr {
-  width: 78%;
   display: grid;
-  grid-template-columns: repeat(15, 1fr);
+  grid-template-columns: repeat(15, 80px);
   grid-auto-rows: 80px;
   gap: 5px;
-  justify-content: center;
+  width: auto;
+  margin-left: 20em;
 }
 
 .element {
@@ -248,11 +245,4 @@ a {
   border-radius: 4px;
   display: inline-block;
 }
-#fbr {
-  display: grid;
-  grid-template-columns: repeat(15, 80px);
-  grid-auto-rows: 80px;
-  gap: 5px;
-  width: auto;
-  margin-left: 20em;
-}
+
