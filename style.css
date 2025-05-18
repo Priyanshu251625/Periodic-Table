@@ -6,9 +6,7 @@
 html,
 body {
   width: 100%;
-  /* size: 100%; */
   font-family: "Poppins";
-  /* overflow-x:scroll; */
   min-height: 100vh;
 }
 body {
@@ -30,12 +28,11 @@ a {
   --color-actinide: #55b749;
 }
 #container {
-  /* overflow: auto; */
   display: flex;
   flex-direction: column;
 }
 #searchnF {
-  width: 100vw; /* OR better: inherit from a scroll-wide parent */
+  width: 100vw;
   position: sticky;
   top: 0;
   left: 0;
@@ -57,6 +54,7 @@ a {
   overflow: visible;
   display: flex;
   flex-direction: column;
+  margin-left: 40px;
 }
 #upper-elements {
   width: max-content;
@@ -69,10 +67,36 @@ a {
   grid-auto-rows: 80px;
   gap: 5px;
 }
-#grp {
+#group-numbers {
+  margin-top: 15px;
   display: grid;
-  grid-template-columns: repeat(18, 1fr);
-  margin-bottom: 10px;
+  grid-template-columns: repeat(18, 80px);
+  margin-left: 57px;
+  gap: 5px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 10px;
+}
+#main-table-area {
+  display: flex;
+}
+#index {
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  position: absolute;
+  top: 40px;
+}
+#period-numbers {
+  display: grid;
+  grid-template-rows: repeat(7, 80px);
+  gap: 5px;
+  color: white;
+  font-weight: bold;
+  width: 40px;
+  text-align: center;
+  margin-top: 40px;
 }
 #fblock {
   display: flex;
@@ -89,6 +113,7 @@ a {
   grid-template-columns: repeat(15, 1fr);
   grid-auto-rows: 80px;
   gap: 5px;
+  justify-content: center;
 }
 
 .element {
@@ -138,6 +163,18 @@ a {
   opacity: 0;
   transform: translateX(50%);
   transition: all 0.3s ease;
+}
+#footer {
+  background-color: #00a79d;
+  width: max-content;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#legend {
+  width: 100%;
+  background-color: #00a79d;
 }
 .highlighted {
   transform: scale(0.9);
@@ -189,4 +226,33 @@ a {
 }
 .actinide {
   background-color: var(--color-actinide);
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+  font-size: 14px;
+  color: white;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: inline-block;
+}
+#fbr {
+  display: grid;
+  grid-template-columns: repeat(15, 80px);
+  grid-auto-rows: 80px;
+  gap: 5px;
+  width: auto;
+  margin-left: 20em;
 }
