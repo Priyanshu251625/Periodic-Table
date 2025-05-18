@@ -39,6 +39,7 @@ elements.forEach((element) => {
     <div class="state">${element.normalState}</div>
   </div>
 `;
+  // console.log(elementBox.classList);
   elementBox.dataset.name = element.name.toLowerCase();
   elementBox.dataset.symbol = element.symbol.toLowerCase();
   elementBox.dataset.category = element.category.toLowerCase();
@@ -57,26 +58,88 @@ elements.forEach((element) => {
 var searchInput = document.querySelector("#searchInput");
 var categoryFilter = document.querySelector("#categoryFilter");
 var elements1 = document.querySelectorAll(".element");
+// elements1.forEach(el => {
+//   console.log(el.dataset.category);
+// })
 
 searchInput.addEventListener("input", function () {
   const query = searchInput.value.toLowerCase().trim();
-
+  categoryFilter.value = "";
   elements1.forEach((el) => {
     const symbol = el.dataset.symbol?.toLowerCase() || "";
     const name = el.dataset.name?.toLowerCase() || "";
-    const category = el.dataset.category?.toLowerCase() || "";
+    el.classList.remove("highlighted");
     if (query.length <= 2) {
       if (query === "" || symbol === query.toLowerCase()) {
         el.classList.remove("hidden");
+        if (query !== "" || symbol === query.toLowerCase()) {
+          el.classList.add("highlighted");
+          setTimeout(() => {
+            el.classList.remove("highlighted");
+          }, 2000);
+          setTimeout(() => {
+            el.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+              inline: "center",
+            });
+          }, 100);
+        }
       } else {
         el.classList.add("hidden");
       }
     } else {
-      if (query === "" || name.includes(query)) {
+      if (query === "" ||  name.includes(query)) {
         el.classList.remove("hidden");
+        if (query !== "" || name.includes(query)) {
+          el.classList.add("highlighted");
+          setTimeout(() => {
+            el.classList.remove("highlighted");
+          }, 2000);
+          setTimeout(() => {
+            el.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+              inline: "center",
+            });
+          }, 100);
+        }
       } else {
         el.classList.add("hidden");
       }
+      
+      // if (query === "" || name.includes(query)) {
+      //   el.classList.remove("hidden");
+      // } else {
+      //   el.classList.add("hidden");
+      // }
+    }
+  });
+});
+
+categoryFilter.addEventListener("input", function () {
+  searchInput.value = "";
+  const query = categoryFilter.value;
+  elements1.forEach((el) => {
+    const category =
+      el.dataset.category?.toLowerCase().replace(/\s+/g, "-") || "";
+    if (query === "" || category === query) {
+      el.classList.remove("hidden");
+      if(query!==""|| category===query){
+        el.classList.add("highlighted");
+          setTimeout(() => {
+            el.classList.remove("highlighted");
+          }, 2000);
+          setTimeout(() => {
+            el.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+              inline: "center",
+            });
+          }, 100);
+      }
+    } else {
+      el.classList.add("hidden");
     }
   });
 });
