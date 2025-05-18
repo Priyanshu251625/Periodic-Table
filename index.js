@@ -3,10 +3,26 @@ import { elements } from "./elements.js";
 const upper = document.getElementById("upper-elements");
 const lower = document.getElementById("fbr");
 elements.forEach((element) => {
-  const elementBox = document.createElement("div");
-  elementBox.classList.add("element");
+  const baseUrl = "https://en.wikipedia.org/wiki/";
+  element.url = baseUrl + element.name;
+  const anchor = document.createElement("a");
+  anchor.href = element.url;
+  anchor.target = "_blank";
+  anchor.className = "element";
+  anchor.innerHTML = `
+  <div class="main-info">
+    <div class="element-number">${element.number}</div>
+    <div class="element-symbol">${element.symbol}</div>
+    <div class="element-name">${element.name}</div>
+  </div>
+  <div class="extra-info">
+    <div class="atomic-mass">${element.atomicMass}</div>
+    <div class="state">${element.normalState}</div>
+  </div>
+`;
+  anchor.classList.add("element");
   const categoryClass = element.category.toLowerCase().replace(/\s+/g, "-");
-  elementBox.classList.add(categoryClass);
+  anchor.classList.add(categoryClass);
   function groupFinderAct(atno) {
     return atno - 89;
   }
@@ -19,49 +35,33 @@ elements.forEach((element) => {
       (element.number > 89 && element.number <= 103)
     )
   ) {
-    elementBox.style.gridColumn = element.group;
-    elementBox.style.gridRow = element.period;
+    anchor.style.gridColumn = element.group;
+    anchor.style.gridRow = element.period;
   } else if (element.number > 57 && element.number <= 71) {
-    elementBox.style.gridColumn = groupFinderLan(element.number);
-    elementBox.style.gridRow = 1;
+    anchor.style.gridColumn = groupFinderLan(element.number);
+    anchor.style.gridRow = 1;
   } else if (element.number > 89 && element.number <= 103) {
-    elementBox.style.gridColumn = groupFinderAct(element.number);
-    elementBox.style.gridRow = 2;
+    anchor.style.gridColumn = groupFinderAct(element.number);
+    anchor.style.gridRow = 2;
   }
-  elementBox.innerHTML = `
-  <div class="main-info">
-    <div class="element-number">${element.number}</div>
-    <div class="element-symbol">${element.symbol}</div>
-    <div class="element-name">${element.name}</div>
-  </div>
-  <div class="extra-info">
-    <div class="atomic-mass">${element.atomicMass}</div>
-    <div class="state">${element.normalState}</div>
-  </div>
-`;
-  // console.log(elementBox.classList);
-  elementBox.dataset.name = element.name.toLowerCase();
-  elementBox.dataset.symbol = element.symbol.toLowerCase();
-  elementBox.dataset.category = element.category.toLowerCase();
+  anchor.dataset.name = element.name.toLowerCase();
+  anchor.dataset.symbol = element.symbol.toLowerCase();
+  anchor.dataset.category = element.category.toLowerCase();
   if (
     !(
       (element.number > 57 && element.number <= 71) ||
       (element.number > 89 && element.number <= 103)
     )
   ) {
-    upper.appendChild(elementBox);
+    upper.appendChild(anchor);
   } else {
-    lower.append(elementBox);
+    lower.append(anchor);
   }
 });
 
 var searchInput = document.querySelector("#searchInput");
 var categoryFilter = document.querySelector("#categoryFilter");
 var elements1 = document.querySelectorAll(".element");
-// elements1.forEach(el => {
-//   console.log(el.dataset.category);
-// })
-
 searchInput.addEventListener("input", function () {
   const query = searchInput.value.toLowerCase().trim();
   categoryFilter.value = "";
@@ -89,7 +89,7 @@ searchInput.addEventListener("input", function () {
         el.classList.add("hidden");
       }
     } else {
-      if (query === "" ||  name.includes(query)) {
+      if (query === "" || name.includes(query)) {
         el.classList.remove("hidden");
         if (query !== "" || name.includes(query)) {
           el.classList.add("highlighted");
@@ -107,12 +107,6 @@ searchInput.addEventListener("input", function () {
       } else {
         el.classList.add("hidden");
       }
-      
-      // if (query === "" || name.includes(query)) {
-      //   el.classList.remove("hidden");
-      // } else {
-      //   el.classList.add("hidden");
-      // }
     }
   });
 });
@@ -125,18 +119,18 @@ categoryFilter.addEventListener("input", function () {
       el.dataset.category?.toLowerCase().replace(/\s+/g, "-") || "";
     if (query === "" || category === query) {
       el.classList.remove("hidden");
-      if(query!==""|| category===query){
+      if (query !== "" || category === query) {
         el.classList.add("highlighted");
-          setTimeout(() => {
-            el.classList.remove("highlighted");
-          }, 2000);
-          setTimeout(() => {
-            el.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-              inline: "center",
-            });
-          }, 100);
+        setTimeout(() => {
+          el.classList.remove("highlighted");
+        }, 2000);
+        setTimeout(() => {
+          el.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+        }, 100);
       }
     } else {
       el.classList.add("hidden");
